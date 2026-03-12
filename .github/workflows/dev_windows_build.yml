@@ -1,0 +1,33 @@
+name: dev-windows-build
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: "1"
+
+jobs:
+  build_windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Install Rust stable toolchain
+        run: |
+          rustup toolchain install stable --profile minimal --no-self-update
+
+      - name: Build Windows release binary (stable)
+        run: cargo +stable build --release --bin zed
+
+      - name: Upload Windows binary artifact
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+        with:
+          name: zed-windows-dev
+          path: target/release/zed.exe
+          if-no-files-found: error
+
