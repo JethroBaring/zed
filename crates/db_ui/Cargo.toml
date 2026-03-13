@@ -1,0 +1,33 @@
+[package]
+name = "db_ui"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+license = "GPL-3.0-or-later"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow.workspace = true
+editor.workspace = true
+settings.workspace = true
+futures.workspace = true
+gpui.workspace = true
+gpui_tokio.workspace = true
+language.workspace = true
+log.workspace = true
+menu.workspace = true
+paths.workspace = true
+project.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+smol.workspace = true
+sqlx.workspace = true
+theme.workspace = true
+ui.workspace = true
+ui_input.workspace = true
+util.workspace = true
+uuid = { workspace = true, features = ["v4"] }
+workspace.workspace = true
+db.workspace = true

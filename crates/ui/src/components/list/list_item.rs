@@ -335,7 +335,7 @@ impl RenderOnce for ListItem {
                             .flex()
                             .absolute()
                             .left(rems(-1.))
-                            .when(is_open && !self.always_show_disclosure_icon, |this| {
+                            .when(!self.always_show_disclosure_icon, |this| {
                                 this.visible_on_hover("")
                             })
                             .child(
