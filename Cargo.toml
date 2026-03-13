@@ -85,6 +85,7 @@ members = [
     "crates/git_graph",
     "crates/git_hosting_providers",
     "crates/git_ui",
+    "crates/db_ui",
     "crates/go_to_line",
     "crates/google_ai",
     "crates/gpui",
@@ -302,6 +303,7 @@ csv_preview = { path = "crates/csv_preview"}
 dap = { path = "crates/dap" }
 dap_adapters = { path = "crates/dap_adapters" }
 db = { path = "crates/db" }
+db_ui = { path = "crates/db_ui" }
 debug_adapter_extension = { path = "crates/debug_adapter_extension" }
 debugger_tools = { path = "crates/debugger_tools" }
 debugger_ui = { path = "crates/debugger_ui" }
@@ -694,6 +696,7 @@ simplelog = "0.12.2"
 slotmap = "1.0.6"
 smallvec = { version = "1.6", features = ["union", "const_new"] }
 smol = "2.0"
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "mysql", "json", "time", "uuid", "any"] }
 sqlformat = "0.2"
 stacksafe = "0.1"
 streaming-iterator = "0.1"
